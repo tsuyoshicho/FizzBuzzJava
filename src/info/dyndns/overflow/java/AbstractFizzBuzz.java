@@ -1,4 +1,4 @@
-package info.overflow.java;
+package info.dyndns.overflow.java;
 
 import java.util.*;
 
