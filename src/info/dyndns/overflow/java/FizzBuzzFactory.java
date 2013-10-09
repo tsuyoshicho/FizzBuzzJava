@@ -1,7 +1,15 @@
 package info.dyndns.overflow.java;
 
-
+/**
+ * @author Tsuyoshi CHO
+ * License GPLv2 or later 
+ *
+ */
 public class FizzBuzzFactory {
+	private FizzBuzzFactory(){
+		super();
+	}
+	
 	// Procedural
 	static FizzBuzz newProceduralFizzBuzz(Integer max){
 		return new ProceduralFizzBuzz(max);
@@ -20,7 +28,6 @@ public class FizzBuzzFactory {
 	
 	// Stream
 	// FIXME
-	
 	static FizzBuzz newStreamFizzBuzz(Integer max){
 		return new StreamFizzBuzz(max);
 	}

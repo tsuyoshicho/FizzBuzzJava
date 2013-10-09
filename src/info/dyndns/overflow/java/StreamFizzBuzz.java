@@ -2,6 +2,11 @@ package info.dyndns.overflow.java;
 
 import java.util.Map;
 
+/**
+ * @author Tsuyoshi CHO
+ * License GPLv2 or later 
+ * FIXME:in Java8
+ */
 public class StreamFizzBuzz extends AbstractFizzBuzz {
 
 	StreamFizzBuzz(Integer max) {

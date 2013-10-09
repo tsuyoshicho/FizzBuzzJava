@@ -2,11 +2,13 @@ package info.dyndns.overflow.java;
 
 import java.util.*;
 
+/**
+ * @author Tsuyoshi CHO
+ * License GPLv2 or later 
+ * TestMain
+ */
 public class testFizzBuzz {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		int max = 50;
 		List<FizzBuzz> funcList = Arrays.asList(

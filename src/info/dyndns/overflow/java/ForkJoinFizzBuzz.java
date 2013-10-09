@@ -3,7 +3,12 @@ package info.dyndns.overflow.java;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ForkJoinPool;
 
-public class ForkJoinFizzBuzz extends FutureFizzBuzz {
+/**
+ * @author Tsuyoshi CHO
+ * License GPLv2 or later 
+ *
+ */
+public class ForkJoinFizzBuzz extends AbstractConcurrentFizzBuzz {
 
 	ForkJoinFizzBuzz(Integer max) {
 		super(max);

@@ -2,6 +2,11 @@ package info.dyndns.overflow.java;
 
 import java.util.Map;
 
+/**
+ * @author Tsuyoshi CHO
+ * License GPLv2 or later 
+ *
+ */
 class ProceduralFizzBuzz extends AbstractFizzBuzz {
 	ProceduralFizzBuzz(Integer max) {
 		super(max);
