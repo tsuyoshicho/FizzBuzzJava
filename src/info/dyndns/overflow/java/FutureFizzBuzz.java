@@ -1,6 +1,5 @@
 package info.dyndns.overflow.java;
 
-import java.util.*;
 import java.util.concurrent.*;
 
 /**
