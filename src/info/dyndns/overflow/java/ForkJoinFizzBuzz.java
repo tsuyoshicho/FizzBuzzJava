@@ -7,6 +7,7 @@ import java.util.concurrent.ForkJoinPool;
  * @author Tsuyoshi CHO
  * License GPLv2 or later 
  *
+ * TODO Future and F/J migrate ok?
  */
 public class ForkJoinFizzBuzz extends AbstractConcurrentFizzBuzz {
 
