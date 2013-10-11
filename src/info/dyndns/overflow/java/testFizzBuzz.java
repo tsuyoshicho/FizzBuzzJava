@@ -10,7 +10,7 @@ import java.util.*;
 public class testFizzBuzz {
 
 	public static void main(String[] args) {
-		int max = 50;
+		final Integer max = 50;
 		List<FizzBuzz> funcList = Arrays.asList(
 				FizzBuzzFactory.newProceduralFizzBuzz(max),
 				FizzBuzzFactory.newFutureFizzBuzz(max),
