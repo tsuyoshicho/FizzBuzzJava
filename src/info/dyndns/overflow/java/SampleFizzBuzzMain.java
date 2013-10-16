@@ -7,7 +7,7 @@ import java.util.*;
  * License GPLv2 or later 
  * TestMain
  */
-public class testFizzBuzz {
+public class SampleFizzBuzzMain {
 
 	public static void main(String[] args) {
 		final Integer max = 50;
