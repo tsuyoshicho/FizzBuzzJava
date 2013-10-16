@@ -6,16 +6,27 @@
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="FizzBuzzJava">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../../PortableApps/EclipsePortable/App/Eclipse"/>
+    <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+    </path>
     <path id="FizzBuzzJava.classpath">
         <pathelement location="bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="test">
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -30,6 +41,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
+            <src path="test"/>
             <classpath refid="FizzBuzzJava.classpath"/>
         </javac>
     </target>
@@ -47,9 +59,39 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
+    <target name="junit">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <classpath refid="FizzBuzzJava.classpath"/>
+        </junit>
+    </target>
+    <target name="ProceduralFizzBuzzTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="info.dyndns.overflow.java.ProceduralFizzBuzzTest" todir="${junit.output.dir}"/>
+            <classpath refid="FizzBuzzJava.classpath"/>
+        </junit>
+    </target>
+    <target name="src">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <classpath refid="FizzBuzzJava.classpath"/>
+        </junit>
+    </target>
     <target name="test">
-        <java classname="info.dyndns.overflow.java.testFizzBuzz" failonerror="true" fork="yes">
+        <java classname="info.dyndns.overflow.java.SampleFizzBuzzMain" failonerror="true" fork="yes">
             <classpath refid="FizzBuzzJava.classpath"/>
         </java>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
     </target>
 </project>
