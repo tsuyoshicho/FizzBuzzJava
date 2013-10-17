@@ -4,4 +4,4 @@ jdk:
   - oraclejdk7
   - openjdk6
 
-script: "ant build, test"
+script: "ant junit"
