@@ -10,6 +10,10 @@ import java.util.*;
 public abstract class AbstractFizzBuzz implements FizzBuzz {
 	protected int max;
 	AbstractFizzBuzz(Integer max) {
+		if(max < 0){
+			throw new IllegalArgumentException("under 0:"+max.toString());
+		}
+		
 		this.max = max;
 	}
 	
