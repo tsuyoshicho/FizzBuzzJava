@@ -1,4 +1,4 @@
-package info.dyndns.overflow.java;
+ï»¿package info.dyndns.overflow.java;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ public class ProceduralFizzBuzzTest {
 
 	@Test
 	public void testResult() {
-		fail("‚Ü‚¾À‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
+		fail("ã¾ã å®Ÿè£…ã•ã‚Œã¦ã„ã¾ã›ã‚“");
 	}
 
 }
