@@ -15,7 +15,6 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
         <pathelement location="lib/hamcrest-core-1.3.jar"/>
         <pathelement location="lib/junit-4.11.jar" />
-        <pathelement location="bin"/>
     </path>
     <path id="FizzBuzzJava.classpath">
         <pathelement location="bin"/>
@@ -62,7 +61,7 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target depends="build" name="junit">
+    <target name="junit">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
@@ -88,6 +87,22 @@
         <java classname="info.dyndns.overflow.java.SampleFizzBuzzMain" failonerror="true" fork="yes">
             <classpath refid="FizzBuzzJava.classpath"/>
         </java>
+    </target>
+    <target name="test-all">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="info.dyndns.overflow.java.ProceduralFizzBuzzTest" todir="${junit.output.dir}"/>
+            <classpath refid="FizzBuzzJava.classpath"/>
+        </junit>
+    </target>
+    <target name="info.dyndns.overflow.java">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="info.dyndns.overflow.java.ProceduralFizzBuzzTest" todir="${junit.output.dir}"/>
+            <classpath refid="FizzBuzzJava.classpath"/>
+        </junit>
     </target>
     <target name="junitreport">
         <junitreport todir="${junit.output.dir}">
