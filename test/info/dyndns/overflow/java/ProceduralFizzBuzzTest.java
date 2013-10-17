@@ -1,4 +1,4 @@
-﻿package info.dyndns.overflow.java;
+package info.dyndns.overflow.java;
 
 import static org.junit.Assert.*;
 
