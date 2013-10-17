@@ -88,7 +88,7 @@
             <classpath refid="FizzBuzzJava.classpath"/>
         </java>
     </target>
-    <target name="test-all">
+    <target depends="build" name="test-all">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
