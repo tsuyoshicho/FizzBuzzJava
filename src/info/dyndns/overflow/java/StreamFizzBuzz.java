@@ -16,7 +16,8 @@ public class StreamFizzBuzz extends AbstractFizzBuzz {
 
 	@Override
 	Map<Integer, String> createResult(Map<Integer, String> map) {
-		 return IntStream.range(0,this.max)
-		 									.collect(Collectors.toMap(Integer::valueOf,FizzBuzzFactory::FizzBuzzCalc));
+		 IntStream.range(0,this.max)
+		 					.collect(i -> map.put(i,FizzBuzzFactory.FizzBuzzCalc(i)));
+			return map;
 	}
 }
