@@ -1,11 +1,12 @@
 package info.dyndns.overflow.java;
 
 import java.util.Map;
+import java.util.stream.*;
 
 /**
  * @author Tsuyoshi CHO
- * License GPLv2 or later 
- * FIXME:in Java8
+ * License GPLv2 or later
+ *
  */
 public class StreamFizzBuzz extends AbstractFizzBuzz {
 
@@ -15,8 +16,6 @@ public class StreamFizzBuzz extends AbstractFizzBuzz {
 
 	@Override
 	Map<Integer, String> createResult(Map<Integer, String> map) {
-		// java.util.stream.IntStream.range(0,max).parallelStream().collect(i -> map.put(i,FizzBuzzFactory.Calc(i)))
-		return map;
+		 return IntStream.range(0, 10).collect(Collectors.toMap(Integer::valueOf,FizzBuzzFactory::Calc);
 	}
-
 }

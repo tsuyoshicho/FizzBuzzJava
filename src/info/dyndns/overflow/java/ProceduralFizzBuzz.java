@@ -4,7 +4,7 @@ import java.util.Map;
 
 /**
  * @author Tsuyoshi CHO
- * License GPLv2 or later 
+ * License GPLv2 or later
  *
  */
 class ProceduralFizzBuzz extends AbstractFizzBuzz {
@@ -19,5 +19,4 @@ class ProceduralFizzBuzz extends AbstractFizzBuzz {
 		}
 		return map;
 	}
-
 }

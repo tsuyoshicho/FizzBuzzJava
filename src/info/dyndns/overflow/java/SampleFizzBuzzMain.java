@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * @author Tsuyoshi CHO
- * License GPLv2 or later 
+ * License GPLv2 or later
  * TestMain
  */
 public class SampleFizzBuzzMain {
@@ -14,9 +14,10 @@ public class SampleFizzBuzzMain {
 		List<FizzBuzz> funcList = Arrays.asList(
 				FizzBuzzFactory.newProceduralFizzBuzz(max),
 				FizzBuzzFactory.newFutureFizzBuzz(max),
-				FizzBuzzFactory.newForkJoinFizzBuzz(max)
+				FizzBuzzFactory.newForkJoinFizzBuzz(max),
+				FizzBuzzFactory.newStreamFizzBuzz(max)
 				);
-		
+
 		for(FizzBuzz fizzbuzz: funcList){
 			Map<Integer,String> result = fizzbuzz.result();
             /*
