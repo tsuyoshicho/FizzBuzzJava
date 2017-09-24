@@ -4,9 +4,8 @@ import java.util.concurrent.*;
 
 /**
  * @author Tsuyoshi CHO
- * License GPLv2 or later 
+ * License GPLv2 or later
  *
- * TODO Future and F/J migrate ok?
  */
 public class ForkJoinFizzBuzz extends AbstractConcurrentFizzBuzz {
 

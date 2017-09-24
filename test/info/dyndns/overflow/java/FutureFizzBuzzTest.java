@@ -5,19 +5,19 @@ import java.util.Map;
 import org.junit.Test;
 
 public class FutureFizzBuzzTest {
-	@Test
+	@Ignore @Test
 	public void testMax100() {
 		FizzBuzz fb = new FutureFizzBuzz(100);
 		testFizzBuzz(fb);
 	}
 
-	@Test
+	@Ignore @Test
 	public void testMax50() {
 		FizzBuzz fb = new FutureFizzBuzz(50);
 		testFizzBuzz(fb);
 	}
 
-	@Test
+	@Ignore @Test
 	public void testMax1() {
 		FizzBuzz fb = new FutureFizzBuzz(1);
 		testFizzBuzz(fb);

@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * @author Tsuyoshi CHO
  * License GPLv2 or later
- * TestMain
+ * SampleMain
  */
 public class SampleFizzBuzzMain {
 

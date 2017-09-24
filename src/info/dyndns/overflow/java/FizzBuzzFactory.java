@@ -44,7 +44,5 @@ public class FizzBuzzFactory {
 			result = String.valueOf(i);
 		}
 		return result;
-
 	}
-
 }

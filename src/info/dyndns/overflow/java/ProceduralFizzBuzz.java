@@ -14,7 +14,7 @@ class ProceduralFizzBuzz extends AbstractFizzBuzz {
 
 	@Override
 	Map<Integer, String> createResult(Map<Integer, String> map) {
-		for(int i = 0;i < max;i++){
+		for(int i = 1;i < max;i++){
 			map.put(i, FizzBuzzFactory.FizzBuzzCalc(i));
 		}
 		return map;

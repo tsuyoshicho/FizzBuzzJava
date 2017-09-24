@@ -5,19 +5,19 @@ import java.util.Map;
 import org.junit.Test;
 
 public class ProceduralFizzBuzzTest {
-	@Test
+	@Ignore @Test
 	public void testMax100() {
 		FizzBuzz fb = new ProceduralFizzBuzz(100);
 		testFizzBuzz(fb);
 	}
 
-	@Test
+	@Ignore @Test
 	public void testMax50() {
 		FizzBuzz fb = new ProceduralFizzBuzz(50);
 		testFizzBuzz(fb);
 	}
 
-	@Test
+	@Ignore @Test
 	public void testMax1() {
 		FizzBuzz fb = new ProceduralFizzBuzz(1);
 		testFizzBuzz(fb);

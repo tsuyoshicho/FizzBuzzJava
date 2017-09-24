@@ -5,19 +5,19 @@ import java.util.Map;
 import org.junit.Test;
 
 public class ForkJoinFizzBuzzTest {
-	@Test
+	@Ignore @Test
 	public void testMax100() {
 		FizzBuzz fb = new ForkJoinFizzBuzz(100);
 		testFizzBuzz(fb);
 	}
 
-	@Test
+	@Ignore @Test
 	public void testMax50() {
 		FizzBuzz fb = new ForkJoinFizzBuzz(50);
 		testFizzBuzz(fb);
 	}
 
-	@Test
+	@Ignore @Test
 	public void testMax1() {
 		FizzBuzz fb = new ForkJoinFizzBuzz(1);
 		testFizzBuzz(fb);

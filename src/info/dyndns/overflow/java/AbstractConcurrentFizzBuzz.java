@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 
 /**
  * @author Tsuyoshi CHO
- * License GPLv2 or later 
+ * License GPLv2 or later
  *
  */
 public abstract class AbstractConcurrentFizzBuzz extends AbstractFizzBuzz {
@@ -16,15 +16,15 @@ public abstract class AbstractConcurrentFizzBuzz extends AbstractFizzBuzz {
 
 	@Override
 	protected Map<Integer, String> createResult(Map<Integer, String> map) {
-		
+
 		ExecutorService executor = getExecutor();
 		ArrayList<Callable<String>> worker = new ArrayList<Callable<String>>(max);
-	
+
 		/* setup list */
-		for(int i = 0;i < this.max;i++){
+		for(int i = 1;i < this.max;i++){
 			worker.add(i,new FizzBuzzCallable(i));
 		}
-	
+
 		List<Future<String>> results;
 		try {
 			results = executor.invokeAll(worker);
@@ -36,10 +36,10 @@ public abstract class AbstractConcurrentFizzBuzz extends AbstractFizzBuzz {
 		} catch (ExecutionException e) {
 			e.printStackTrace();
 		}
-		
+
 		return map;
 	}
-	
+
 	abstract ExecutorService getExecutor();
 
 	class FizzBuzzCallable implements Callable<String>{
@@ -53,6 +53,4 @@ public abstract class AbstractConcurrentFizzBuzz extends AbstractFizzBuzz {
 			return FizzBuzzFactory.FizzBuzzCalc(this.val);
 		}
 	}
-	
-
 }
