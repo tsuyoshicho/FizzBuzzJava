@@ -5,6 +5,13 @@ import java.util.Map;
 import org.junit.Test;
 
 public class ProceduralFizzBuzzTest {
+	@Test
+	public void testResultCount() {
+		int count = 10;
+		FizzBuzz fb = new ProceduralFizzBuzz(count);
+		assertEquals("count:"+count+" result:"+fb.result().size(),count,fb.result());
+	}
+
 	@Ignore @Test
 	public void testMax100() {
 		FizzBuzz fb = new ProceduralFizzBuzz(100);
