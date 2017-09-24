@@ -99,6 +99,18 @@
             <classpath refid="FizzBuzzJava.classpath"/>
         </junit>
     </target>
+    <target depends="build" name="test-ci">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="no" printsummary="withOutAndErr">
+            <formatter type="plain"/>
+            <batchtest todir="${junit.output.dir}">
+              <fileset dir="test">
+                <include name="**/*Test.java"/>
+              </fileset>
+            </batchtest>
+            <classpath refid="FizzBuzzJava.classpath"/>
+        </junit>
+    </target>
     <target name="info.dyndns.overflow.java">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">

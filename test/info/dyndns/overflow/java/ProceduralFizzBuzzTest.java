@@ -6,11 +6,6 @@ import org.junit.Test;
 
 public class ProceduralFizzBuzzTest {
 	@Test
-	public void testForceOK() {
-		assertTrue(true);
-	}
-
-	@Test
 	public void testResultCount() {
 		int count = 10;
 		FizzBuzz fb = FizzBuzzFactory.newProceduralFizzBuzz(count);
