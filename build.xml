@@ -101,7 +101,7 @@
     </target>
     <target depends="build" name="test-ci">
         <mkdir dir="${junit.output.dir}"/>
-        <junit fork="no" printsummary="withOutAndErr">
+        <junit fork="no" printsummary="withOutAndErr" failureProperty="test.failure" haltonfailure="test.error">
             <formatter type="plain"/>
             <batchtest todir="${junit.output.dir}">
               <fileset dir="test">
@@ -110,6 +110,13 @@
             </batchtest>
             <classpath refid="FizzBuzzJava.classpath"/>
         </junit>
+    </target>
+    <target name="test-ci-log" depends="test-ci, verifyNoError, verifyNoFailure"/>
+    <target name="verifyNoError" if="test.error">
+        <fail message="JUnit test or tests errors."/>
+    </target>
+    <target name="verifyNoFailure" if="test.failure">
+        <fail message="JUnit test or tests failed."/>
     </target>
     <target name="info.dyndns.overflow.java">
         <mkdir dir="${junit.output.dir}"/>
