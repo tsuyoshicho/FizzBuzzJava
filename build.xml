@@ -87,6 +87,18 @@
             <classpath refid="FizzBuzzJava.classpath"/>
         </java>
     </target>
+    <target depends="build" name="test-ci">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="on">
+            <formatter type="xml"/>
+            <batchtest todir="${junit.output.dir}">
+              <fileset dir="test">
+                <include name="**/*Test.java"/>
+              </fileset>
+            </batchtest>
+            <classpath refid="FizzBuzzJava.classpath"/>
+        </junit>
+    </target>
     <target depends="build" name="test-all">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">

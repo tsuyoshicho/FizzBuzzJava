@@ -23,12 +23,13 @@ public class FutureFizzBuzzTest {
 		testFizzBuzz(fb);
 	}
 
-	// @Test(expected = IllegalArgumentException.class)
+	@Ignore @Test(expected = IllegalArgumentException.class)
 	public void testUnder() {
 		@SuppressWarnings("unused")
 		FizzBuzz fb = new FutureFizzBuzz(-1);
 	}
 
+	@Ignore
 	private void testFizzBuzz(FizzBuzz fb) {
 		for(Map.Entry<Integer, String> entry : fb.result().entrySet()){
 			boolean three = (entry.getKey() % 3) == 0;
