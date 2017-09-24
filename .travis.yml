@@ -8,4 +8,4 @@ jdk:
   - oraclejdk9
   - openjdk8
 
-script: "ant test-ci"
+script: "ant test-all"
