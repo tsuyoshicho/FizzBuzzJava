@@ -4,19 +4,19 @@ import java.util.*;
 
 /**
  * @author Tsuyoshi CHO
- * License GPLv2 or later 
+ * License GPLv2 or later
  *
  */
 public abstract class AbstractFizzBuzz implements FizzBuzz {
-	protected int max;
+	protected Integer max;
 	AbstractFizzBuzz(Integer max) {
-		if(max < 0){
+		if(max < 1){
 			throw new IllegalArgumentException("under 0:"+max.toString());
 		}
-		
+
 		this.max = max;
 	}
-	
+
 	abstract Map<Integer,String> createResult(Map<Integer,String> map);
 	@Override
 	public Map<Integer, String> result() {

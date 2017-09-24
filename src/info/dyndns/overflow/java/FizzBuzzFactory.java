@@ -2,14 +2,14 @@ package info.dyndns.overflow.java;
 
 /**
  * @author Tsuyoshi CHO
- * License GPLv2 or later 
+ * License GPLv2 or later
  *
  */
 public class FizzBuzzFactory {
 	private FizzBuzzFactory(){
 		super();
 	}
-	
+
 	// Procedural
 	static FizzBuzz newProceduralFizzBuzz(Integer max){
 		return new ProceduralFizzBuzz(max);
@@ -19,19 +19,18 @@ public class FizzBuzzFactory {
 	static FizzBuzz newFutureFizzBuzz(Integer max){
 		return new FutureFizzBuzz(max);
 	}
-	
-	 
+
+
 	// ForkJoin
 	static FizzBuzz newForkJoinFizzBuzz(Integer max){
 		return new ForkJoinFizzBuzz(max);
 	}
-	
+
 	// Stream
-	// FIXME
 	static FizzBuzz newStreamFizzBuzz(Integer max){
 		return new StreamFizzBuzz(max);
 	}
-	
+
 	// Util
 	static String FizzBuzzCalc(int i){
 		String result = "";
@@ -47,5 +46,5 @@ public class FizzBuzzFactory {
 		return result;
 
 	}
-	
+
 }
