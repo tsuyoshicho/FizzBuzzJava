@@ -91,7 +91,11 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="info.dyndns.overflow.java.ProceduralFizzBuzzTest" todir="${junit.output.dir}"/>
+            <batchtest todir="${junit.output.dir}">
+              <fileset dir="test">
+                <include name="**/*Test.java"/>
+              </fileset>
+            </batchtest>
             <classpath refid="FizzBuzzJava.classpath"/>
         </junit>
     </target>
