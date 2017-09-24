@@ -16,8 +16,8 @@ public class StreamFizzBuzz extends AbstractFizzBuzz {
 
 	@Override
 	Map<Integer, String> createResult(Map<Integer, String> map) {
-		 Map<Integer, String> data = IntStream.range(0,this.max)
-		 																			.forEach(i -> map.put(i,FizzBuzzFactory.FizzBuzzCalc(i)));
+		 IntStream.range(0,this.max)
+		 					.forEach(i -> map.put(i,FizzBuzzFactory.FizzBuzzCalc(i)));
 			return map;
 	}
 }
