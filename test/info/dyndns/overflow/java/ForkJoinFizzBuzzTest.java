@@ -5,28 +5,35 @@ import java.util.Map;
 import org.junit.Test;
 
 public class ForkJoinFizzBuzzTest {
+	@Test
+	public void testResultCount() {
+		int count = 10;
+		FizzBuzz fb = FizzBuzzFactory.newForkJoinFizzBuzz(count);
+		assertEquals("count:"+count+" result:"+fb.result().size(),count,fb.result());
+	}
+
 	@Ignore @Test
 	public void testMax100() {
-		FizzBuzz fb = new ForkJoinFizzBuzz(100);
+		FizzBuzz fb = FizzBuzzFactory.newForkJoinFizzBuzz(100);
 		testFizzBuzz(fb);
 	}
 
 	@Ignore @Test
 	public void testMax50() {
-		FizzBuzz fb = new ForkJoinFizzBuzz(50);
+		FizzBuzz fb = FizzBuzzFactory.newForkJoinFizzBuzz(50);
 		testFizzBuzz(fb);
 	}
 
 	@Ignore @Test
 	public void testMax1() {
-		FizzBuzz fb = new ForkJoinFizzBuzz(1);
+		FizzBuzz fb = FizzBuzzFactory.newForkJoinFizzBuzz(1);
 		testFizzBuzz(fb);
 	}
 
 	@Ignore @Test(expected = IllegalArgumentException.class)
 	public void testUnder() {
 		@SuppressWarnings("unused")
-		FizzBuzz fb = new ForkJoinFizzBuzz(-1);
+		FizzBuzz fb = FizzBuzzFactory.newForkJoinFizzBuzz(-1);
 	}
 
 	@Ignore

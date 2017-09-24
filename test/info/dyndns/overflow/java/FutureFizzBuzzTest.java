@@ -5,28 +5,35 @@ import java.util.Map;
 import org.junit.Test;
 
 public class FutureFizzBuzzTest {
+	@Test
+	public void testResultCount() {
+		int count = 10;
+		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(count);
+		assertEquals("count:"+count+" result:"+fb.result().size(),count,fb.result());
+	}
+
 	@Ignore @Test
 	public void testMax100() {
-		FizzBuzz fb = new FutureFizzBuzz(100);
+		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(100);
 		testFizzBuzz(fb);
 	}
 
 	@Ignore @Test
 	public void testMax50() {
-		FizzBuzz fb = new FutureFizzBuzz(50);
+		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(50);
 		testFizzBuzz(fb);
 	}
 
 	@Ignore @Test
 	public void testMax1() {
-		FizzBuzz fb = new FutureFizzBuzz(1);
+		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(1);
 		testFizzBuzz(fb);
 	}
 
 	@Ignore @Test(expected = IllegalArgumentException.class)
 	public void testUnder() {
 		@SuppressWarnings("unused")
-		FizzBuzz fb = new FutureFizzBuzz(-1);
+		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(-1);
 	}
 
 	@Ignore

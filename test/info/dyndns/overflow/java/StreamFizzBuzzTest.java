@@ -5,28 +5,35 @@ import java.util.Map;
 import org.junit.Test;
 
 public class StreamFizzBuzzTest {
+	@Test
+	public void testResultCount() {
+		int count = 10;
+		FizzBuzz fb = FizzBuzzFactory.newStreamFizzBuzz(count);
+		assertEquals("count:"+count+" result:"+fb.result().size(),count,fb.result());
+	}
+
 	@Ignore @Test
 	public void testMax100() {
-		FizzBuzz fb = new StreamFizzBuzz(100);
+		FizzBuzz fb = FizzBuzzFactory.newStreamFizzBuzz(100);
 		testFizzBuzz(fb);
 	}
 
 	@Ignore @Test
 	public void testMax50() {
-		FizzBuzz fb = new StreamFizzBuzz(50);
+		FizzBuzz fb = FizzBuzzFactory.newStreamFizzBuzz(50);
 		testFizzBuzz(fb);
 	}
 
 	@Ignore @Test
 	public void testMax1() {
-		FizzBuzz fb = new StreamFizzBuzz(1);
+		FizzBuzz fb = FizzBuzzFactory.newStreamFizzBuzz(1);
 		testFizzBuzz(fb);
 	}
 
 	@Ignore @Test(expected = IllegalArgumentException.class)
 	public void testUnder() {
 		@SuppressWarnings("unused")
-		FizzBuzz fb = new StreamFizzBuzz(-1);
+		FizzBuzz fb = FizzBuzzFactory.newStreamFizzBuzz(-1);
 	}
 
 	@Ignore

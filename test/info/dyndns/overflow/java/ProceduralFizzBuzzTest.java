@@ -8,25 +8,25 @@ public class ProceduralFizzBuzzTest {
 	@Test
 	public void testResultCount() {
 		int count = 10;
-		FizzBuzz fb = new ProceduralFizzBuzz(count);
+		FizzBuzz fb = FizzBuzzFactory.newProceduralFizzBuzz(count);
 		assertEquals("count:"+count+" result:"+fb.result().size(),count,fb.result());
 	}
 
 	@Ignore @Test
 	public void testMax100() {
-		FizzBuzz fb = new ProceduralFizzBuzz(100);
+		FizzBuzz fb = FizzBuzzFactory.newProceduralFizzBuzz(100);
 		testFizzBuzz(fb);
 	}
 
 	@Ignore @Test
 	public void testMax50() {
-		FizzBuzz fb = new ProceduralFizzBuzz(50);
+		FizzBuzz fb = FizzBuzzFactory.newProceduralFizzBuzz(50);
 		testFizzBuzz(fb);
 	}
 
 	@Ignore @Test
 	public void testMax1() {
-		FizzBuzz fb = new ProceduralFizzBuzz(1);
+		FizzBuzz fb = FizzBuzzFactory.newProceduralFizzBuzz(1);
 		testFizzBuzz(fb);
 	}
 
