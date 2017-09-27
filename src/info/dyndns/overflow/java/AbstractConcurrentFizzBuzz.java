@@ -26,7 +26,7 @@ public abstract class AbstractConcurrentFizzBuzz extends AbstractFizzBuzz {
 		}
 
 		// collect result
-		for (Entry<Integer,Future<String>> entry : results.entrySet()) {
+		for (Map.Entry<Integer,Future<String>> entry : results.entrySet()) {
 			map.put(entry.getKey(), entry.getValue().get());
 		}
 
