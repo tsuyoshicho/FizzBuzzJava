@@ -18,6 +18,7 @@ public abstract class AbstractFizzBuzz implements FizzBuzz {
 	}
 
 	abstract Map<Integer,String> createResult(Map<Integer,String> map);
+
 	@Override
 	public Map<Integer, String> result() {
 		return createResult(new TreeMap<Integer,String>());

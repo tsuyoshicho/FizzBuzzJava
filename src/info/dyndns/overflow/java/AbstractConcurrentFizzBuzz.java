@@ -18,7 +18,7 @@ public abstract class AbstractConcurrentFizzBuzz extends AbstractFizzBuzz {
 	protected Map<Integer, String> createResult(Map<Integer, String> map) {
 
 		ExecutorService executor = getExecutor();
-		ArrayList<Callable<String>> worker = new ArrayList<Callable<String>>(max);
+		List<Callable<String>> worker = new ArrayList<Callable<String>>(max);
 
 		/* setup list */
 		for(int i = 1;i < this.max;i++){
@@ -28,7 +28,7 @@ public abstract class AbstractConcurrentFizzBuzz extends AbstractFizzBuzz {
 		List<Future<String>> results;
 		try {
 			results = executor.invokeAll(worker);
-			for(int i = 0;i < results.size();i++){
+			for(int i = 1;i < results.size();i++){
 				map.put(i, results.get(i).get());
 			}
 		} catch (InterruptedException e) {
