@@ -4,7 +4,7 @@ import java.util.concurrent.*;
 
 /**
  * @author Tsuyoshi CHO
- * License GPLv2 or later 
+ * License GPLv2 or later
  *
  */
 class FutureFizzBuzz extends AbstractConcurrentFizzBuzz {
@@ -14,7 +14,7 @@ class FutureFizzBuzz extends AbstractConcurrentFizzBuzz {
 
 	@Override
 	ExecutorService getExecutor(){
-		return Executors.newFixedThreadPool(Math.min(Runtime.getRuntime().availableProcessors(), this.max/10));
+		return Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 	}
-	
+
 }
