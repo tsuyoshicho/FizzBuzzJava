@@ -21,9 +21,8 @@
         <path refid="JUnit 4.libraryclasspath"/>
     </path>
     <path id="FizzBuzzJavaTest.classpath">
-        <pathelement location="${junit.output.dir}"/>
         <pathelement location="bin"/>
-        <pathelement location="."/>
+        <pathelement location="bin-test"/>
         <path refid="JUnit 4.libraryclasspath"/>
     </path>
     <target name="init">
@@ -50,6 +49,13 @@
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
             <classpath refid="FizzBuzzJava.classpath"/>
+        </javac>
+    </target>
+    <target depends="init" name="build-project-test">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin-test" includeantruntime="false" source="${source}" target="${target}">
+            <src path="test"/>
+            <classpath refid="FizzBuzzJavaTest.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -105,8 +111,8 @@
             <classpath refid="FizzBuzzJava.classpath"/>
         </junit>
     </target>
-    <target depends="build" name="test-ci">
-        <mkdir dir="${junit.output.dir}"/>
+    <target depends="build build-project-test" name="test-ci">
+        <mkdir dir="bin-test"/>
         <junit fork="no" printsummary="withOutAndErr" failureProperty="test.failure" haltonfailure="test.error">
             <formatter type="plain" usefile="false"/>
             <batchtest todir="${junit.output.dir}">
