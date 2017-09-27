@@ -22,12 +22,12 @@ public abstract class AbstractConcurrentFizzBuzz extends AbstractFizzBuzz {
 
 		/* setup list */
 		for(int i = 1;i < this.max;i++){
-			results.add(i,executor.submit(new FizzBuzzCallable(i)));
+			results.put(i,executor.submit(new FizzBuzzCallable(i)));
 		}
 
 		// collect result
 		for (Entry<Integer,Future<String>> entry : results.entrySet()) {
-				map.put(entry.getKey(), entry.getValue().get(i).get());
+			map.put(entry.getKey(), entry.getValue().get());
 		}
 
 		return map;
