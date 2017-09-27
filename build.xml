@@ -111,7 +111,7 @@
             <classpath refid="FizzBuzzJava.classpath"/>
         </junit>
     </target>
-    <target depends="build build-project-test" name="test-ci">
+    <target depends="build,build-project-test" name="test-ci">
         <mkdir dir="bin-test"/>
         <junit fork="no" printsummary="withOutAndErr" failureProperty="test.failure" haltonfailure="test.error">
             <formatter type="plain" usefile="false"/>
