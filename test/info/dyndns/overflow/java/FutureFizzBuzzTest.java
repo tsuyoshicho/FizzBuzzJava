@@ -12,25 +12,25 @@ public class FutureFizzBuzzTest {
 		assertEquals("count:"+count+" result:"+fb.result().size(),count,fb.result());
 	}
 
-	@Ignore @Test
+	@Test
 	public void testMax100() {
 		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(100);
 		testFizzBuzz(fb);
 	}
 
-	@Ignore @Test
+	@Test
 	public void testMax50() {
 		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(50);
 		testFizzBuzz(fb);
 	}
 
-	@Ignore @Test
+	@Test
 	public void testMax1() {
 		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(1);
 		testFizzBuzz(fb);
 	}
 
-	@Ignore @Test(expected = IllegalArgumentException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testUnder() {
 		@SuppressWarnings("unused")
 		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(-1);
