@@ -31,6 +31,11 @@ public class FizzBuzzFactory {
 		return new StreamFizzBuzz(max);
 	}
 
+	// ParallelStream
+	static FizzBuzz newParallelStreamFizzBuzz(Integer max){
+		return new ParallelStreamFizzBuzz(max);
+	}
+
 	// Util
 	static String FizzBuzzCalc(int i){
 		String result = "";
