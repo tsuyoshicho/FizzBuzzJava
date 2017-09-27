@@ -8,8 +8,8 @@ public class FutureFizzBuzzTest {
 	@Test
 	public void testResultCount() {
 		int count = 10;
-		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(count);
-		assertEquals("count:" + count + " result:" + fb.result().size(),count - 1,fb.result());
+		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(count+1);
+		assertEquals("count:" + count + " result:" + fb.result().size(),count ,fb.result());
 	}
 
 	@Test
