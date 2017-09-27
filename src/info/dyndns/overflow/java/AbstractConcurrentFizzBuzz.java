@@ -18,23 +18,16 @@ public abstract class AbstractConcurrentFizzBuzz extends AbstractFizzBuzz {
 	protected Map<Integer, String> createResult(Map<Integer, String> map) {
 
 		ExecutorService executor = getExecutor();
-		List<Callable<String>> worker = new ArrayList<Callable<String>>(max);
+		Map<Integer,Future<String>> results = new TreeMap<Integer,Future<String>>();
 
 		/* setup list */
 		for(int i = 1;i < this.max;i++){
-			worker.add(i,new FizzBuzzCallable(i));
+			results.add(i,executor.submit(new FizzBuzzCallable(i)));
 		}
 
-		List<Future<String>> results;
-		try {
-			results = executor.invokeAll(worker);
-			for(int i = 1;i < results.size();i++){
-				map.put(i, results.get(i).get());
-			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
+		// collect result
+		for (Entry<Integer,Future<String>> entry : results.entrySet()) {
+				map.put(entry.getKey(), entry.getValue().get(i).get());
 		}
 
 		return map;

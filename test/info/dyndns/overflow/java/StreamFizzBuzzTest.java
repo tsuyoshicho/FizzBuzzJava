@@ -9,7 +9,7 @@ public class StreamFizzBuzzTest {
 	public void testResultCount() {
 		int count = 10;
 		FizzBuzz fb = FizzBuzzFactory.newStreamFizzBuzz(count);
-		assertEquals("count:"+count+" result:"+fb.result().size(),count,fb.result());
+		assertEquals("count:" + count + " result:" + fb.result().size(),count - 1,fb.result());
 	}
 
 	@Test

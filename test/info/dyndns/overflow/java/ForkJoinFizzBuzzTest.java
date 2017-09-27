@@ -9,7 +9,7 @@ public class ForkJoinFizzBuzzTest {
 	public void testResultCount() {
 		int count = 10;
 		FizzBuzz fb = FizzBuzzFactory.newForkJoinFizzBuzz(count);
-		assertEquals("count:"+count+" result:"+fb.result().size(),count,fb.result());
+		assertEquals("count:" + count + " result:" + fb.result().size(),count - 1,fb.result());
 	}
 
 	@Test
