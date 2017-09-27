@@ -9,7 +9,7 @@ public class FutureFizzBuzzTest {
 	public void testResultCount() {
 		int count = 10;
 		FizzBuzz fb = FizzBuzzFactory.newFutureFizzBuzz(count+1);
-		assertEquals("count:" + count + " result:" + fb.result().size(),count ,fb.result());
+		assertEquals("count:" + count + " result:" + fb.result().size(),count ,fb.result().size());
 	}
 
 	@Test
