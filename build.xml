@@ -114,6 +114,8 @@
               </fileset>
             </batchtest>
             <classpath refid="FizzBuzzJavaTest.classpath"/>
+            <property name="class-path" refid="FizzBuzzJavaTest.classpath" />
+            <echo>${class-path}</echo>
         </junit>
     </target>
     <target name="test-ci-log" depends="test-ci, verifyNoError, verifyNoFailure"/>
