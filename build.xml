@@ -27,6 +27,7 @@
     </path>
     <target name="init">
         <mkdir dir="bin"/>
+        <mkdir dir="bin-test"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
                 <exclude name="**/*.java"/>
@@ -112,7 +113,6 @@
         </junit>
     </target>
     <target depends="build,build-project-test" name="test-ci">
-        <mkdir dir="bin-test"/>
         <junit fork="no" printsummary="withOutAndErr" failureProperty="test.failure" haltonfailure="test.error">
             <formatter type="plain" usefile="false"/>
             <batchtest todir="${junit.output.dir}">
