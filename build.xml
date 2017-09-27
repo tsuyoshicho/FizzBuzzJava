@@ -102,7 +102,7 @@
     <target depends="build" name="test-ci">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="no" printsummary="withOutAndErr" failureProperty="test.failure" haltonfailure="test.error">
-            <formatter type="plain"/>
+            <formatter type="plain" usefile="false"/>
             <batchtest todir="${junit.output.dir}">
               <fileset dir="test">
                 <include name="**/*Test.java"/>
