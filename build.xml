@@ -20,6 +20,10 @@
         <pathelement location="bin"/>
         <path refid="JUnit 4.libraryclasspath"/>
     </path>
+    <path id="FizzBuzzJavaTest.classpath">
+        <pathelement location="test"/>
+        <path refid="FizzBuzzJava.classpath"/>
+    </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
@@ -108,7 +112,7 @@
                 <include name="**/*Test.java"/>
               </fileset>
             </batchtest>
-            <classpath refid="FizzBuzzJava.classpath"/>
+            <classpath refid="FizzBuzzJavaTest.classpath"/>
         </junit>
     </target>
     <target name="test-ci-log" depends="test-ci, verifyNoError, verifyNoFailure"/>
