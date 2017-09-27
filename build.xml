@@ -23,6 +23,7 @@
     <path id="FizzBuzzJavaTest.classpath">
         <pathelement location="${junit.output.dir}"/>
         <pathelement location="bin"/>
+        <pathelement location="test"/>
         <path refid="JUnit 4.libraryclasspath"/>
     </path>
     <target name="init">
