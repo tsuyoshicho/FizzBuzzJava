@@ -36,7 +36,6 @@ public class ProceduralFizzBuzzTest {
 		FizzBuzz fb = new ProceduralFizzBuzz(-1);
 	}
 
-	@Ignore
 	private void testFizzBuzz(FizzBuzz fb) {
 		for(Map.Entry<Integer, String> entry : fb.result().entrySet()){
 			boolean three = (entry.getKey() % 3) == 0;
