@@ -11,7 +11,7 @@ public abstract class AbstractFizzBuzz implements FizzBuzz {
 	protected Integer max;
 	AbstractFizzBuzz(Integer max) {
 		if(max < 1){
-			throw new IllegalArgumentException("under 0:"+max.toString());
+			throw new IllegalArgumentException("under 0:" + max);
 		}
 
 		this.max = max;

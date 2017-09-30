@@ -15,17 +15,14 @@ public class SampleFizzBuzzMain {
 				FizzBuzzFactory.newProceduralFizzBuzz(max),
 				FizzBuzzFactory.newFutureFizzBuzz(max),
 				FizzBuzzFactory.newForkJoinFizzBuzz(max),
-				FizzBuzzFactory.newStreamFizzBuzz(max)
+				FizzBuzzFactory.newStreamFizzBuzz(max),
+				FizzBuzzFactory.newParallelStreamFizzBuzz(max)
 				);
 
 		for(FizzBuzz fizzbuzz: funcList){
 			Map<Integer,String> result = fizzbuzz.result();
-            /*
-			for(Map.Entry<Integer, String> entry : result.entrySet()){
-				System.out.println("FizzBuzz:" + entry.getKey().toString() + ":" + entry.getValue());
-			}
-			*/
-			System.out.println("FizzBuzz " + fizzbuzz.toString() + ",total:" + result.toString());
+
+			System.out.println("FizzBuzz " + fizzbuzz + ",total:" + result);
 		}
 	}
 }

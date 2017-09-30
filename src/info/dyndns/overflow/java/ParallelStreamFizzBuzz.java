@@ -16,8 +16,7 @@ public class ParallelStreamFizzBuzz extends AbstractFizzBuzz {
 
 	@Override
 	Map<Integer, String> createResult(Map<Integer, String> map) {
-		 IntStream.range(1,this.max).parallel()
-		 					.forEach(i -> map.put(i,FizzBuzzFactory.FizzBuzzCalc(i)));
+		 IntStream.range(1,this.max).parallel().forEach(i -> map.put(i,FizzBuzzFactory.FizzBuzzCalc(i)));
 			return map;
 	}
 }
