@@ -17,10 +17,10 @@ public class FizzBuzzFactory {
 
 	// Single Factory
 	public static Stream<String> stream(){
-		Supplier<String> supplier = new Supplier<String> (){
+		Supplier<String> supplier = new Supplier<String>(){
 			int count = 1;
 			@Override
-			String get(){
+			public String get(){
 				int currentCount = count;
 				count++;
 				return FizzBuzzCalc(currentCount);
