@@ -1,5 +1,6 @@
 package info.dyndns.overflow.java;
 
+import java.util.function.*;
 import java.util.stream.*;
 
 /**
