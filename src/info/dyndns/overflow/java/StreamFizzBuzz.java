@@ -8,7 +8,7 @@ import java.util.stream.*;
  * License GPLv2 or later
  *
  */
-public class StreamFizzBuzz extends AbstractFizzBuzz {
+class StreamFizzBuzz extends AbstractFizzBuzz {
 
 	StreamFizzBuzz(Integer max) {
 		super(max);

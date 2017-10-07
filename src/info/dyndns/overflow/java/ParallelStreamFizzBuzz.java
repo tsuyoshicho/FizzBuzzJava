@@ -8,7 +8,7 @@ import java.util.stream.*;
  * License GPLv2 or later
  *
  */
-public class ParallelStreamFizzBuzz extends AbstractFizzBuzz {
+class ParallelStreamFizzBuzz extends AbstractFizzBuzz {
 
 	ParallelStreamFizzBuzz(Integer max) {
 		super(max);

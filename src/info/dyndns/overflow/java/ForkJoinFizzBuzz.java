@@ -7,7 +7,7 @@ import java.util.concurrent.*;
  * License GPLv2 or later
  *
  */
-public class ForkJoinFizzBuzz extends AbstractConcurrentFizzBuzz {
+class ForkJoinFizzBuzz extends AbstractConcurrentFizzBuzz {
 
 	ForkJoinFizzBuzz(Integer max) {
 		super(max);
