@@ -24,7 +24,7 @@ public class FizzBuzzFactory {
 				count++;
 				return FizzBuzzCalc(currentCount);
 			}
-		}
+		};
 
 		return Stream.generate(supplier);
 	}
