@@ -8,10 +8,10 @@ import java.util.stream.*;
 public class FizzBuzzFactoryTest {
 	@Test
 	public void testFizzBuzzFacoryStream() {
-		Map.Entry<Integer, String> map = new HashMap<Integer,String>();
+		Map<Integer, String> map = new HashMap<Integer,String>();
 
 		int count = 100;
-		List<String> list = FizzBuzzFactory.stream().limit(count).collect(Collector.toList());
+		List<String> list = FizzBuzzFactory.stream().limit(count).collect(Collectors.toList());
 
 		int index = 1;
 		for(String fb : list){
